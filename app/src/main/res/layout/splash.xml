@@ -2,14 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
+    <!--满屏启动页-->
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/._splash" />
+        android:src="@drawable/splash" />
+        <!--添加满屏启动背景图片-->
+
+
 
     <!--<appliction-->
         <!--android:theme="@android:style/Theme.NoTitlebar"/>-->
