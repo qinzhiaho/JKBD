@@ -5,4 +5,5 @@ package com.example.administrator.jkbd.bean;
  */
 
 public class ExaminInfo {
+
 }
