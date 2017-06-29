@@ -12,7 +12,7 @@
         android:layout_height="fill_parent"
         android:scaleType="fitXY"
         android:src="@drawable/splash" />
-        <!--添加满屏启动背景图片-->
+    <!--添加满屏启动背景图片-->
 
 
 
