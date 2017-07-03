@@ -11,12 +11,15 @@
         android:src="@drawable/exam_title"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"/>
+
     <TextView
+        android:id="@+id/tv_examinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:text="@string/exam_title"
-        android:textColor="#000"
-        android:layout_marginLeft="10dp"/>
+        android:textColor="#000" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

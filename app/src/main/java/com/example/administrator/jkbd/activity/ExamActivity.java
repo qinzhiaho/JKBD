@@ -24,20 +24,17 @@ public class ExamActivity extends AppCompatActivity {
         initDate();
         
     }
-
     private void initView() {
         tvExamInfo=(TextView)findViewById(R.id.tv_examinfo);
     }
-
     private void initDate() {
         ExaminInfo examInfo=ExamApplication.getInstance().getmExamInfo();
         if(examInfo!=null){
             showData(examInfo);
         }
     }
-
     private void showData(ExaminInfo examInfo) {
-
+        tvExamInfo.setText(examInfo.toString());
     }
 //
 //    @Override
