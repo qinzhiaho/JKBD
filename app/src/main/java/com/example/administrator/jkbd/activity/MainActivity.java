@@ -18,21 +18,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void test(View view) {
-        OkHttpUtils<ExaminInfo>utils=new OkHttpUtils<>(getApplicationContext());
-        String  url="http://101.251.196.90:8080/JztkServer/examInfo";
-        utils.url(url)
-                .targetClass(ExaminInfo.class)
-                .execute(new OkHttpUtils.OnCompleteListener<ExaminInfo>() {
-                    @Override
-                    public void onSuccess(ExaminInfo result) {
-                        Log.e("main","result"+result);
-                    }
-
-                    @Override
-                    public void onError(String error) {
-                        Log.e("main","error"+error);
-                    }
-                });
+//        OkHttpUtils<ExaminInfo>utils=new OkHttpUtils<>(getApplicationContext());
+//        String  url="http://101.251.196.90:8080/JztkServer/examInfo";
+//        utils.url(url)
+//                .targetClass(ExaminInfo.class)
+//                .execute(new OkHttpUtils.OnCompleteListener<ExaminInfo>() {
+//                    @Override
+//                    public void onSuccess(ExaminInfo result) {
+//                        Log.e("main","result"+result);
+//                    }
+//
+//                    @Override
+//                    public void onError(String error) {
+//                        Log.e("main","error"+error);
+//                    }
+//                });
         startActivity(new Intent(MainActivity.this,ExamActivity.class));
     }
     public void exit(View view) {
