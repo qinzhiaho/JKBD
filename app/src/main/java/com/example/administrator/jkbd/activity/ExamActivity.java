@@ -42,14 +42,7 @@ public class ExamActivity extends AppCompatActivity {
 
     }
     private void initDate() {
-        ExaminInfo examInfo=ExamApplication.getInstance().getmExamInfo();
-        if(examInfo!=null){
-            showData(examInfo);
-        }
-        List<Exam> examList=ExamApplication.getInstance().getmExamList();
-        if (examList!=null){
-            showExam(examList);
-        }
+
     }
 
     private void showExam(List<Exam> examList) {
