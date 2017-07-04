@@ -45,7 +45,7 @@ public class ExamActivity extends AppCompatActivity {
         if(examInfo!=null){
             showData(examInfo);
         }
-        List<Exam> examList=ExamApplication.getInstance().getmExamInfo();
+        List<Exam> examList=ExamApplication.getInstance().getmExamList();
         if (examList!=null){
             showExam(examList);
         }

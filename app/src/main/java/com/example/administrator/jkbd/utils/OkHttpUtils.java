@@ -355,6 +355,7 @@ public class OkHttpUtils<T> {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String json = response.body().string();
+                Log.e("tag","json="+json);
                 if (mClazz==null){
                     targetClass((Class<T>) String.class);
                 }

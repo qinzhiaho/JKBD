@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/29.
  */
 
-public abstract class ExaminInfo implements List<Exam> {
+public class ExaminInfo {
 
     /**
      * subjectTitle : c1
@@ -19,6 +19,7 @@ public abstract class ExaminInfo implements List<Exam> {
     private int uid;
     private int limitTime;
     private int questionCount;
+
 
     public String getSubjectTitle() {
         return subjectTitle;

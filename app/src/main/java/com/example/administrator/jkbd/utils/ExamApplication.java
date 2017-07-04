@@ -32,6 +32,7 @@ public class ExamApplication extends Application {
             @Override
             public void run() {
                 OkHttpUtils<ExaminInfo> utils=new OkHttpUtils<>(instance);
+                Log.e("tag","utils="+utils);
                 String  url="http://101.251.196.90:8080/JztkServer/examInfo";
                 utils.url(url)
                         .targetClass(ExaminInfo.class)
