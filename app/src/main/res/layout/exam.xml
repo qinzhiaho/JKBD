@@ -37,6 +37,7 @@
             android:textColor="#000"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/tv_exam_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="这个标志的含义是？"
@@ -44,6 +45,7 @@
             android:textSize="18dp"/>
     </LinearLayout>
     <ImageView
+        android:id="@+id/im_exam_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/btn"
@@ -60,6 +62,7 @@
             android:textColor="#000"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/tv_op1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="这个标志的含义是？"
@@ -78,6 +81,7 @@
         android:textColor="#000"
         android:textSize="18dp"/>
     <TextView
+        android:id="@+id/tv_op2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="这个标志的含义是？"
@@ -96,6 +100,7 @@
         android:textColor="#000"
         android:textSize="18dp"/>
     <TextView
+        android:id="@+id/tv_op3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="这个标志的含义是？"
@@ -114,6 +119,7 @@
         android:textColor="#000"
         android:textSize="18dp"/>
     <TextView
+        android:id="@+id/tv_op4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="这个标志的含义是？"

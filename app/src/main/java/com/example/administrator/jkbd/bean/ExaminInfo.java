@@ -1,10 +1,12 @@
 package com.example.administrator.jkbd.bean;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/6/29.
  */
 
-public class ExaminInfo {
+public abstract class ExaminInfo implements List<Exam> {
 
     /**
      * subjectTitle : c1
