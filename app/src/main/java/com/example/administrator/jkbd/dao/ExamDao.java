@@ -1,5 +1,6 @@
 package com.example.administrator.jkbd.dao;
 
+import android.content.Intent;
 import android.util.Log;
 
 import com.example.administrator.jkbd.bean.Exam;
@@ -21,20 +22,27 @@ public class ExamDao implements IExamDao{
         OkHttpUtils<ExaminInfo> utils=new OkHttpUtils<>(ExamApplication.getInstance());
         Log.e("tag","utils="+utils);
         String  url="http://101.251.196.90:8080/JztkServer/examInfo";
-        utils.url(url)
-                .targetClass(ExaminInfo.class)
-                .execute(new OkHttpUtils.OnCompleteListener<ExaminInfo>() {
-                    @Override
-                    public void onSuccess(ExaminInfo result) {
-                        Log.e("main","result"+result);
-                        ExamApplication.getInstance().setmExamInfo(result);
-                    }
+        utils.url(url);
+        utils.targetClass(ExaminInfo.class);
+        utils.execute(new OkHttpUtils.OnCompleteListener<ExaminInfo>() {
+            @Override
+            public void onSuccess(ExaminInfo result) {
+                Log.e("main", "result" + result);
+                ExamApplication.getInstance().setmExamInfo(result);
+                ExamApplication.getInstance()
+                        .sendBroadcast(new Intent(ExamApplication.LOAD_EXAM_INFO)
+                                .putExtra(ExamApplication.LOAD_DATA_SUCCESS, true));
 
-                    @Override
-                    public void onError(String error) {
-                        Log.e("main","error"+error);
-                    }
-                });
+            }
+
+            @Override
+            public void onError(String error) {
+                Log.e("main", "error" + error);
+                ExamApplication.getInstance()
+                        .sendBroadcast(new Intent(ExamApplication.LOAD_EXAM_INFO)
+                                .putExtra(ExamApplication.LOAD_DATA_SUCCESS, false));
+            }
+        });
     }
 
     @Override
@@ -46,17 +54,25 @@ public class ExamDao implements IExamDao{
                 .execute(new OkHttpUtils.OnCompleteListener<String>() {
                     @Override
                     public void onSuccess(String jsonStr) {
+                        boolean success=false;
                         Result result= ResultUtils.getListResultFromJson(jsonStr);
                         if (result!=null&&result.getError_code()==0){
                             List<Exam> list=result.getResult();
                             if (list!=null&&list.size()>0){
                                 ExamApplication.getInstance().setmExamList(list);
+                                success=true;
                             }
                         }
+                        ExamApplication.getInstance()
+                                .sendBroadcast(new Intent(ExamApplication.LOAD_EXAM_QUESTION)
+                                        .putExtra(ExamApplication.LOAD_DATA_SUCCESS, success));
                     }
                     @Override
                     public void onError(String error) {
                         Log.e("main","error="+error);
+                        ExamApplication.getInstance()
+                                .sendBroadcast(new Intent(ExamApplication.LOAD_EXAM_QUESTION)
+                                        .putExtra(ExamApplication.LOAD_DATA_SUCCESS, false));
                     }
                 });
     }

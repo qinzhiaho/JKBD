@@ -19,26 +19,28 @@ public class ExamApplication extends Application {
     ExaminInfo mExamInfo;
     List<Exam>mExamList;
     private static ExamApplication instance;
+    public static String LOAD_EXAM_INFO="load_exam_info";
+    public static String LOAD_EXAM_QUESTION="load_exam_question";
+    public static String LOAD_DATA_SUCCESS="load_data_success";
     IExamBiz biz;
     @Override
     public void onCreate() {
         super.onCreate();
         instance=this;
         biz=new ExamBiz();
-        initDate();
+//        initDate();
     }
     public static ExamApplication getInstance(){
         return instance;
     }
-    private void initDate() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                biz.beginExam();
-            }
-        }).start();
-
-    }
+//    private void initDate() {
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                biz.beginExam();
+//            }
+//        }).start();
+//    }
 
     public ExaminInfo getmExamInfo() {
         return mExamInfo;
