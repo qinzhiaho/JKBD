@@ -10,7 +10,9 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.administrator.jkbd.R;
@@ -37,6 +39,7 @@ public class ExamActivity extends AppCompatActivity {
 
     LoadExamBroadcast mLoadExamBroadcast;
     LoadQuestionBroadcast mLoadQuestionBroadcast;
+    LinearLayout layoutLoading;
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam);
@@ -76,6 +79,7 @@ public class ExamActivity extends AppCompatActivity {
 
     private void initData(){
         if (isLoadExamInfo&&isLoadQuestions) {
+            layoutLoading.setVisibility(View.GONE);
             ExaminInfo examInfo = ExamApplication.getInstance().getmExamInfo();
             if (examInfo != null) {
                 showData(examInfo);
@@ -87,6 +91,7 @@ public class ExamActivity extends AppCompatActivity {
         }
     }
     private void initView() {
+        layoutLoading= (LinearLayout) findViewById(R.id.layout_loading);
         tvExamInfo=(TextView)findViewById(R.id.tv_examinfo);
         tvExamTitle=(TextView)findViewById(R.id.tv_exam_title);
         tvop01=(TextView)findViewById(R.id.tv_op1);
